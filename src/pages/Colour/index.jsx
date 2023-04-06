@@ -4,7 +4,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 function Colour() {
 	const [colour, setColour] = useState({});
 	const { id } = useParams();
-	const navigate = useNavigate();
 
 	useEffect(() => {
 		fetchColour();

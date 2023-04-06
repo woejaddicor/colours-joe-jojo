@@ -1,10 +1,25 @@
+import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
+import { useColours } from '../../contexts';
+
 function Home() {
-    return (
-        <div>
-            <h1>Home</h1>
-            <p>I am a homepage!</p>
-        </div>
+    const {colourContext, setColourContext} = useColours()
+
+    useEffect(() => {
+        setColourContext(colourContext)
+    }, [])
+
+    return(
+        colourContext.map((colour) => {
+            return(
+                <div style={{backgroundColor: '#' + colour}} key={colour}>
+                    <Link to={`/colours/${colour}`}>
+                        <h1 className='colour-link'>{colour}</h1>
+                    </Link>
+                </div>
+            )
+        }
     )
-}
+)}
 
 export default Home;

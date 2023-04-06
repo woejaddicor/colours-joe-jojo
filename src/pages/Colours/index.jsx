@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { useColours } from '../../contexts';
 
 function Colours() {
     useEffect(() => {
@@ -7,7 +8,8 @@ function Colours() {
     }, [])
 
     const [colours, setColours] = useState([])
-    const [myColours, setMyColours] = useState([]);
+    const {colourContext, setColourContext} = useColours()
+
 
     const fetchColours = async () => {
         try {
@@ -21,8 +23,11 @@ function Colours() {
 
     const addToMyColours = (element) => {
         const colourToAdd = element
-        setMyColours([...myColours, colourToAdd]);
+        console.log(colourToAdd)
+        setColourContext([...colourContext, colourToAdd]);
       };
+
+      console.log(colourContext)
 
     return (
         <div>
