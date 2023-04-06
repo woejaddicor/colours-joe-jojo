@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+  background-color: black;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-height: 7vh;
+  background: rgb(117, 117, 117);
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  font-size: 30px;
+}
+
+.colour-div {
+  height: 100px;
+}
+
+.single-colour {
+  height: 60rem;
+  font-size: 24px;
+}
+
+.single-colour > img {
+  width: 30%;
+}
+
+.colour-link {
+  display: inline-block;
+  color: white;
+  text-shadow:  -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
